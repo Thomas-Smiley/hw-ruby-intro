@@ -3,15 +3,18 @@
 # Part 1
 
 def sum arr
-  # YOUR CODE HERE
+  arr.reduce(0, :+)
 end
 
 def max_2_sum arr
-  # YOUR CODE HERE
+  return 0 if arr.empty?
+  return arr.first if arr.length == 1
+
+  arr.sort{ |a, b| b <=> a }.take(2).reduce(:+)
 end
 
 def sum_to_n? arr, n
-  # YOUR CODE HERE
+  arr.combination(2).any? {|a, b| a + b == n}
 end
 
 # Part 2
